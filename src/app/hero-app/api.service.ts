@@ -1,7 +1,6 @@
 import { Injectable } from '@angular/core';
 import {HttpClient, HttpHeaders} from '@angular/common/http';
 import {Observable} from 'rxjs';
-import {Hero} from './hero';
 
 
 @Injectable({
@@ -15,6 +14,7 @@ export class ApiService {
   private createHeader(headers: HttpHeaders) {
     headers = headers || new HttpHeaders();
     headers = headers.set('Content-Type', 'application/json');
+    headers = headers.set('Access-Control-Allow-Origin', 'http://localhost:4200');
     return headers;
   }
 
@@ -24,16 +24,16 @@ export class ApiService {
     return this.http.get<any>(url, {headers, params});
   }
 
-  post(url: string, params?): Observable<any> {
+  post(url: string, data, params?): Observable<any> {
     let headers = new HttpHeaders();
     headers = this.createHeader(headers);
-    return this.http.post(url, {headers, params});
+    return this.http.post(url, data, {headers});
   }
 
-  put(url: string, params?) {
+  put(url: string, data, params?) {
     let headers = new HttpHeaders();
     headers = this.createHeader(headers);
-    return this.http.put(url, {headers, params});
+    return this.http.put(url, data, { headers });
   }
 
   delete(url: string, params?) {

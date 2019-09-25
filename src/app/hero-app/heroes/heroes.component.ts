@@ -10,7 +10,7 @@ import { FilterPipe } from 'ngx-filter-pipe';
   styleUrls: ['./heroes.component.css']
 })
 export class HeroesComponent implements OnInit {
-  heroes: Hero[];
+  heroes: Hero[] = [];
 
   constructor(private heroService: HeroService, private heroesFilter: FilterPipe) {
     this.heroesFilter.transform(this.heroes, { name: '' });
@@ -22,7 +22,7 @@ export class HeroesComponent implements OnInit {
 
   getHeroes(): void {
     this.heroService.getHeroes()
-      .subscribe(heroes => {debugger;
+      .subscribe(heroes => {
         this.heroes = heroes;
         return this.heroes;
       });
