@@ -14,7 +14,7 @@ export class ApiService {
   private createHeader(headers: HttpHeaders) {
     headers = headers || new HttpHeaders();
     headers = headers.set('Content-Type', 'application/json');
-    headers = headers.set('Access-Control-Allow-Origin', 'http://localhost:4200');
+    headers = headers.set('Access-Control-Allow-Origin', 'http://localhost:3000');
     return headers;
   }
 
