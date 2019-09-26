@@ -1,5 +1,4 @@
 <h2>My Heroes</h2>
-
 <div>
   <label>Hero name:
     <input #heroName />
@@ -8,20 +7,17 @@
     add
   </button>
 </div>
-
 <ul class="heroes">
   <label>Filter:
     <input type="text" [(ngModel)]="heroesFilter.name" placeholder="name">
   </label>
   <li *ngFor="let hero of heroes | filterBy: heroesFilter">
     <a routerLink="/detail/{{hero._id}}">
-      <!--<span class="badge">{{hero._id}}</span> !-->{{hero.name}}
+      {{hero.name}}
     </a>
     <button class="delete" title="delete hero" (click)="delete(hero)">x</button>
   </li>
-  <!---
   <ul>
     <li *ngIf="(heroes | filterBy: heroesFilter).length === 0">No matching elements</li>
   </ul>
-  !-->
 </ul>

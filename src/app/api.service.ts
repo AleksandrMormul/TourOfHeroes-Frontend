@@ -24,13 +24,13 @@ export class ApiService {
     return this.http.get<any>(url, {headers, params});
   }
 
-  post(url: string, data, params?): Observable<any> {
+  post(url: string, data): Observable<any> {
     let headers = new HttpHeaders();
     headers = this.createHeader(headers);
     return this.http.post(url, data, {headers});
   }
 
-  put(url: string, data, params?) {
+  put(url: string, data) {
     let headers = new HttpHeaders();
     headers = this.createHeader(headers);
     return this.http.put(url, data, { headers });

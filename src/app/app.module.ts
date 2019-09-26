@@ -9,7 +9,6 @@ import { AppComponent } from './app.component';
 
 import { HeroAppModule } from './hero-app/hero-app.module';
 import { DashboardComponent } from './dashboard/dashboard.component';
-// import { MessagesComponent } from './messages/messages.component';
 
 import { FilterPipeModule } from 'ngx-filter-pipe';
 
@@ -25,7 +24,6 @@ import { FilterPipeModule } from 'ngx-filter-pipe';
    declarations: [
       AppComponent,
       DashboardComponent,
-     /*MessagesComponent,*/
    ],
    bootstrap: [AppComponent]
 })
