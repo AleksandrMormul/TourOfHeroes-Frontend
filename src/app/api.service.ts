@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import {HttpClient, HttpHeaders} from '@angular/common/http';
 import {Observable} from 'rxjs';
+import { environment } from '../environments/environment';
 
 
 @Injectable({
@@ -14,7 +15,7 @@ export class ApiService {
   private createHeader(headers: HttpHeaders) {
     headers = headers || new HttpHeaders();
     headers = headers.set('Content-Type', 'application/json');
-    headers = headers.set('Access-Control-Allow-Origin', 'http://localhost:3000');
+    headers = headers.set('Access-Control-Allow-Origin', environment.apiUrl);
     return headers;
   }
 

@@ -6,12 +6,13 @@ import { catchError, map, tap } from 'rxjs/operators';
 import { Hero } from './hero';
 import { MessageService } from '../message.service';
 import { ApiService } from '../api.service';
+import { environment } from '../../environments/environment';
 
 
 @Injectable({ providedIn: 'root' })
 export class HeroService {
 
-  heroesUrl = 'http://localhost:3000';
+  heroesUrl = environment.apiUrl;
 
   constructor(
     private http: ApiService,
